@@ -55,7 +55,7 @@ resource "aws_security_group" "TF_SG" {
 
 # Creating S3 bucket
 resource "aws_s3_bucket" "s3-bucket" {
-  bucket = "my-tf-demo-bucket-private"
+  bucket = "my-terraform-testdemo-privatebucket"
   acl    = "private"
 
   versioning {
