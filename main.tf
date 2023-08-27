@@ -1,4 +1,4 @@
-# Creating VPC with the IGW
+# Creating VPC with the default values
 resource "aws_vpc" "vpc" {
     cidr_block                       = "10.0.0.0/16"   
     instance_tenancy                 = "default"
@@ -8,7 +8,7 @@ resource "aws_vpc" "vpc" {
         Name  = "TerraformVPC"
     }
 }
-
+# Attached the IGW for my VPC 
 resource "aws_internet_gateway" "internet_gateway" {
 vpc_id    =  aws_vpc.vpc.id
 
@@ -20,9 +20,9 @@ tags = {
 # Create EC2 Instance
 resource "aws_instance" "abcdef-public_instance" {
     ami           = "ami-051f7e7f6c2f40dc1"
-    count         =  1
+    count         =  2
     instance_type = "t2.micro"
-    
+    security_groups = [aws_security_group.TF_SG.name]
     tags = {
         Name = "Instance-public_${count.index}"
     }
