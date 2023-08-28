@@ -29,6 +29,7 @@ resource "aws_instance" "abcdef-public_instance" {
     
 }
 
+
 # Creating Security group 
 resource "aws_security_group" "TF_SG" {
   name        = "Terraform using security group"
