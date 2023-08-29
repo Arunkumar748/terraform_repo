@@ -49,8 +49,8 @@ resource "aws_iam_user" "example" {
 } */
 
 ##############################################  Terraform Locals
-locals {
-    staging_env  = "staging123456"
+/* locals {
+    staging_env  = "staging"
 }
 
 # Creating VPC with the default values
@@ -83,5 +83,16 @@ resource "aws_instance" "ec2_example" {
     Name  =  "${local.staging_env}-Terraform EC2"
  
 }
-}
+} */
 
+##########################################  Output values
+resource "aws_instance" "ec2_example" {
+
+   ami           = "ami-051f7e7f6c2f40dc1"
+   instance_type =  "t2.micro"
+   
+   tags = {
+           Name = "Terraform EC2"
+   }
+
+}
