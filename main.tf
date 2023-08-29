@@ -66,7 +66,7 @@ resource "aws_vpc" "staging-vpc" {
 
 resource "aws_subnet" "staging-subnet" {
   vpc_id = aws_vpc.staging-vpc.id
-  cidr_block = "10.0.0.1/24"
+  cidr_block = "10.0.0.0/24"
 
   tags = {
     Name = "${local.staging_env}-subnet-tag"
