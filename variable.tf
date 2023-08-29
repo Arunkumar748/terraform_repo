@@ -19,9 +19,19 @@ variable "enable_public_ip" {
   default     = true
 } */
 
-#List Type
+/* #List Type
 variable "user_names" {
   description = "IAM usernames"
   type        = list(string)                                   #Decribe which type of string to list (number or boolean)
   default     = ["user1", "user2", "user3s"]
+} */
+
+#Map Type
+variable "project_environment" {
+  description = "project name and environment"
+  type        = map(string)                                    #Do mention what type of variable
+  default     = {
+    project     = "project-alpha",
+    environment = "dev"
+  }
 }
