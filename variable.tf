@@ -26,7 +26,7 @@ variable "user_names" {
   default     = ["user1", "user2", "user3s"]
 } */
 
-#Map Type
+/* #Map Type
 variable "project_environment" {
   description = "project name and environment"
   type        = map(string)                                    #Do mention what type of variable
@@ -34,4 +34,4 @@ variable "project_environment" {
     project     = "project-alpha",
     environment = "dev"
   }
-}
+} */
