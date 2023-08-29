@@ -12,9 +12,16 @@ variable "instance_count" {
    default     =  3                                         #variable default value
 }  */
 
-#Boolean Type                                               #The bool variable can be used to set true or false values inside your terraform file.
+/* #Boolean Type                                               #The bool variable can be used to set true or false values inside your terraform file. Showing public ip
 variable "enable_public_ip" {
   description = "Enable public IP address"
   type        = bool
   default     = true
+} */
+
+#List Type
+variable "user_names" {
+  description = "IAM usernames"
+  type        = list(string)                                   #Decribe which type of string to list (number or boolean)
+  default     = ["user1", "user2", "user3s"]
 }
