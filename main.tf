@@ -25,10 +25,15 @@ resource "aws_instance" "ec2_examble" {
    ami           = "ami-051f7e7f6c2f40dc1"
    instance_type =  "t2.micro"
    count = 1
-   associate_public_ip_address = var.enable_public_ip
+   #associate_public_ip_address = var.enable_public_ip
 
    tags = {
            Name = "Terraform EC2"
    }
 
+}
+
+resource "aws_iam_user" "example" {
+  count = length(var.user_names)
+  name  = var.user_names[count.index]
 }
