@@ -20,7 +20,7 @@ resource "aws_instance" "ec2_examble" {
     }
   } */
 
-  resource "aws_instance" "ec2_example" {
+ /*  resource "aws_instance" "ec2_example" {
 
    ami           = "ami-051f7e7f6c2f40dc1"
    instance_type =  "t2.micro"
@@ -36,4 +36,14 @@ resource "aws_instance" "ec2_examble" {
 resource "aws_iam_user" "example" {
   count = length(var.user_names)
   name  = var.user_names[count.index]
+}
+ */
+
+ resource "aws_instance" "ec2_example" {
+
+   ami           = "ami-051f7e7f6c2f40dc1"
+   instance_type =  "t2.micro"
+
+   tags = var.project_environment
+
 }
