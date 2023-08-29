@@ -50,7 +50,7 @@ resource "aws_iam_user" "example" {
 
 ##############################################  Terraform Locals
 locals {
-    staging_env  = "staging"
+    staging_env  = "staging123456"
 }
 
 # Creating VPC with the default values
