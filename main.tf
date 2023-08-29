@@ -47,3 +47,41 @@ resource "aws_iam_user" "example" {
    tags = var.project_environment
 
 } */
+
+##############################################  Terraform Locals
+locals {
+    staging_env  = "staging"
+}
+
+# Creating VPC with the default values
+resource "aws_vpc" "staging-vpc" {
+    cidr_block                       = "10.0.0.0/16"   
+    instance_tenancy                 = "default"
+    enable_dns_hostnames             = true
+    assign_generated_ipv6_cidr_block = false
+    tags  = {
+        Name  = "${local.staging_env}-staging-vpc-tag"
+    }
+}
+
+resource "aws_subnet" "staging-subnet" {
+  vpc_id = aws_vpc.staging-vpc.id
+  cidr_block = "10.0.0.1/24"
+
+  tags = {
+    Name = "${local.staging_env}-subnet-tag"
+  }
+}
+
+resource "aws_instance" "ec2_example" {
+
+   ami           = "ami-051f7e7f6c2f40dc1"
+   instance_type =  "t2.micro"
+   subnet_id     =  aws_subnet.staging-subnet.id
+
+   tags = {
+    Name  =  "${local.staging_env}-Terraform EC2"
+ 
+}
+}
+
