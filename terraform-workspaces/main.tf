@@ -14,5 +14,5 @@ locals {
 }
 
 
-#dev
-#test
+#dev enivronment
+#production environment
