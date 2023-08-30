@@ -35,7 +35,7 @@ data "aws_instance" "import-dev-instance" {
 resource "aws_instance" "ec2_example" {
   ami           = "ami-051f7e7f6c2f40dc1"
   instance_type = var.instance_type
-  
+  count = 3
   tags = {
     Name = data.aws_instance.import-dev-instance.tags.Name
   }
