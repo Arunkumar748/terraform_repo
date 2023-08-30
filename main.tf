@@ -86,7 +86,7 @@ resource "aws_instance" "ec2_example" {
 } */
 
 ##########################################  Output values
-resource "aws_instance" "ec2_example" {
+/* resource "aws_instance" "ec2_example" {
 
    ami           = "ami-051f7e7f6c2f40dc1"
    instance_type =  "t2.micro"
@@ -95,4 +95,4 @@ resource "aws_instance" "ec2_example" {
            Name = "Terraform EC2"
    }
 
-}
+} */
