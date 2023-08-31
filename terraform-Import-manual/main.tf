@@ -2,7 +2,7 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_instance" "import_ec2_instance" {
+resource "aws_instance" "import-ec2-instance" {
 
 
 }
@@ -15,5 +15,6 @@ resource "aws_instance" "import_ec2_instance" {
 ######################## terraform import command to import resource 
   
 #terraform import <RESOURCE_TYPE>.<RESOURCE_NAME> <RESOURCE_ID> 
+#terraform import aws_instance.import-ec2-manual i-007fd1b924c64b503
 
 #terraform import aws_s3_bucket.my_bucket my-bucket-name 
