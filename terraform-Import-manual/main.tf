@@ -3,7 +3,12 @@ provider "aws" {
 }
 
 resource "aws_instance" "import-ec2-instance" {
-
+    ami   =  "i-007fd1b924c64b503"
+    instance_type  =  "t2.micro"
+    
+    tags  =  {
+        Name  = "import-ec2-machine"
+    }
 
 }
 
