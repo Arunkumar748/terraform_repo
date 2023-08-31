@@ -28,7 +28,7 @@ locals {
 
 } */
 
-data "aws_instance" "import-dev-instance" {
+/* data "aws_instance" "import-dev-instance" {
   instance_id = "i-0b647eee4da3d60f2"
 }
 
@@ -40,3 +40,4 @@ resource "aws_instance" "ec2_example" {
     Name = data.aws_instance.import-dev-instance.tags.Name
   }
 }
+ */
