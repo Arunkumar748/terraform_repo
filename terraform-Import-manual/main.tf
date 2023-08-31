@@ -2,12 +2,12 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_instance" "importec2-test" {
-    ami   =  "ami-026ebd4cfe2c043b2"
-    instance_type  =  "t2.micro"
+resource "aws_instance" "" {
+    ami   =  ""
+    instance_type  =  ""
     
     tags  =  {
-              Name  = "importec2-test"
+              Name  = ""
     }
 
 }
@@ -30,3 +30,6 @@ resource "aws_instance" "importec2-test" {
 
 #ami-026ebd4cfe2c043b2
 #i-0e3ad1f66994a3859
+
+
+ 
