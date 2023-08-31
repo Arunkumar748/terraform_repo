@@ -2,12 +2,12 @@ provider "aws" {
     region = "us-east-1"
 }
 
-resource "aws_instance" "import-ec2-manual" {
+resource "aws_instance" "importec2" {
     ami   =  "ami-005b11f8b84489615"
     instance_type  =  "t2.micro"
     
     tags  =  {
-              Name  = "import-ec2-manual"
+              Name  = "importec2"
     }
 
 }
