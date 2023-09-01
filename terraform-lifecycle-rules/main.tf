@@ -8,7 +8,7 @@ resource "aws_instance" "ec2_example" {
    instance_type =  "t2.micro"
    
    tags = {
-           Name = "terraform_ec2import_statefile"
+           Name = "terraform_lifecycle"
    }
 }
 
@@ -21,9 +21,9 @@ resource "aws_eip_association" "eip_assoc" {
     allocation_id = "aws_eip.myeip"
 }
 
-resource "aws_security_group" "TF_SG" {
-  name        = "tc-sg"
-  description = "tc-sg"
+resource "aws_security_group" "allow_eip" {
+  name        = "lifecycle-sg"
+  description = "lifecycle-sg"
   
 
   ingress {
