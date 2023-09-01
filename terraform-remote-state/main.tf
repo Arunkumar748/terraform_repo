@@ -14,7 +14,7 @@ resource "aws_instance" "ec2_example" {
 }
 
 terraform {
-    backend "S3" {
+    backend "s3" {
     bucket = "myremote-statefile-s3bucket"
     key    = "key/terraform.tfstate"
     region =  "us-east-1"
