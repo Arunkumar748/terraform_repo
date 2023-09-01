@@ -8,7 +8,7 @@ resource "aws_instance" "terraform-state-file" {
    instance_type =  "t2.micro"
    
    tags = {
-           Name = Terraform statefile
+           Name = Terraform-state-file
    }
 
 }
