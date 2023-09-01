@@ -1,4 +1,4 @@
-/* resource "aws_instance" "ec2_example" {
+resource "aws_instance" "ec2_example" {
 
    ami           = "ami-051f7e7f6c2f40dc1"
    instance_type =  var.instance_type
@@ -11,12 +11,19 @@
 
 locals {
           instance_name  = "${terraform.workspace}-instance"
-} */
+}
 
 
 #dev enivronment
 #production environment
+#test environment
 
+
+
+
+
+
+###############################################################
 /* resource "aws_instance" "ec2_example" {
 
    ami           = "ami-051f7e7f6c2f40dc1"

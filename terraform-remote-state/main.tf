@@ -1,4 +1,4 @@
-provider "aws" {
+/* provider "aws" {
     region = "us-east-1"
 }
 
@@ -19,4 +19,4 @@ terraform {
     key    = "key/terraform.tfstate"
     region =  "us-east-1"
 }
-}
+} */
