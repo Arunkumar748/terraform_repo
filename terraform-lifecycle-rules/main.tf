@@ -17,7 +17,7 @@ resource "aws_eip" "myeip" {
 }
 
 resources "aws_eip_association" "eip_assoc" {
-    instance_id  =  "aws_instance" "ec2_example"
+    instance_id  =  "aws_instance.ec2_example"
     allocation_id = "aws_eip.myeip"
 }
 
