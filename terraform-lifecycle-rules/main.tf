@@ -16,7 +16,7 @@ resource "aws_eip" "myeip" {
     vpc = true  
 }
 
-resources "aws_eip_association" "eip_assoc" {
+resource "aws_eip_association" "eip_assoc" {
     instance_id  =  "aws_instance.ec2_example"
     allocation_id = "aws_eip.myeip"
 }
