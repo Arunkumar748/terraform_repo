@@ -22,8 +22,8 @@ resource "aws_eip_association" "eip_assoc" {
 }
 
 resource "aws_security_group" "allow_eip" {
-  name        = "lifecycle-sg"
-  description = "lifecycle-sg"
+  name        = "lifecycle-sg-demo"
+  description = "lifecycle-sg-demo"
   
 
   ingress {
