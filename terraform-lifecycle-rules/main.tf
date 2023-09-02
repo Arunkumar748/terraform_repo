@@ -31,7 +31,7 @@ resource "aws_security_group" "allow_eip" {
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    cidr_blocks      = ["44.219.49.12/32"]
+    cidr_blocks      = ["${aws_eip.myeip.public_ip}/32"]
     #ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
   }
 
@@ -43,3 +43,5 @@ resource "aws_security_group" "allow_eip" {
     #ipv6_cidr_blocks = ["::/0"]
   }
 }
+
+#["44.219.49.12/32"]
