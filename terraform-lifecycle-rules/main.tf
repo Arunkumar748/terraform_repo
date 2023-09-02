@@ -22,8 +22,8 @@ resource "aws_eip_association" "eip_assoc" {
 }
 
 resource "aws_security_group" "allow_eip" {
-  name        = "lifecycle-sg-demo"
-  description = "lifecycle-sg-demo"
+  name        = "lifecycle-sg"
+  description = "lifecycle-sg"
   
 
   ingress {
@@ -42,6 +42,14 @@ resource "aws_security_group" "allow_eip" {
     cidr_blocks      = ["0.0.0.0/0"]
     #ipv6_cidr_blocks = ["::/0"]
   }
+
+lifecycle {
+  
+  create_before_destroy = true
 }
+}
+
+
+
 
 #["44.219.49.12/32"]
