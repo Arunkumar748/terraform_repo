@@ -45,7 +45,8 @@ resource "aws_security_group" "allow_eip" {
 
 lifecycle {
   
-  create_before_destroy = true
+  #create_before_destroy = true
+  prevent_destroy        = true
 }
 }
 
