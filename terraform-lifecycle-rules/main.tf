@@ -47,11 +47,12 @@ lifecycle {
   
   #create_before_destroy = true
   #prevent_destroy       = true
-  ignore_changes         = tags
+  }
+
+
+lifecycle {
+  ignore_changes = tags
 }
 }
-
-
-
 
 #["44.219.49.12/32"]
