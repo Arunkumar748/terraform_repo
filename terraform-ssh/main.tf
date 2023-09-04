@@ -9,7 +9,8 @@ resource "aws_instance" "ec2_example" {
     key_name= "key-for-terraform"
     vpc_security_group_ids = [aws_security_group.main.id]
 
- 
+}
+
 resource "aws_security_group" "main" {
  ingress                = [
    {
