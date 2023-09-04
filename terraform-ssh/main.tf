@@ -6,7 +6,7 @@ resource "aws_instance" "ec2_example" {
 
     ami = "ami-051f7e7f6c2f40dc1"
     instance_type = "t2.micro" 
-    key_name= "terraformkey.pem.pub"
+    key_name= "demokey.pub"
     vpc_security_group_ids = [aws_security_group.main.id]
 
 }
@@ -35,6 +35,6 @@ resource "aws_security_group" "main" {
 }
 
 resource "aws_key_pair" "deployer" {
-  key_name   = "terraformkey.pem.pub"
-  public_key = "ssh-rsa AAAAB4NzaC1yc2EAAAADAQABAAABgQC3RDcVY3RnwQp7BnZhYEI70ZzG9uWHfyAKPPMUshlKOm5b4Xj7b06ZOnPiR6yFhgaycUZ8hYIRm6L4levrMs7PFFrJpb03uGR9YzN3STu38BpBgtDl91Z2nSPlw+W6JcnYtoalHnr/gbCDTSllGT0NVDJwSOesP6FXRO4Pq93kyLPqhKfZHThnzyfU8g2zuOISzwm1dweKfjcPY1zoRROhKlidav4nZ434oHftOQnY0W1IgunhUM0vzlMmYp+WER6hZwhqCVFcIpTRsQZ8/eN8RO79LveUirOpAww23s+UstE8P2gwB0kG9Xm0zXnxZIlEGBL8FtckEZSWGSFcxCboy74YZNvN5KzLjd+Yhzz4DNEb8jS9UM5pw86cxOj0aFu4e7GLBe6l0sJkE4YylYGigbyOAZckyplONHnC9+eMPzjp+NoZMnidWIy8R336uz0ul7+0/cZsnQ1962iCQ8ULeHUS8m+6G7gVgT6EEr7ULa7LMCgx1aJJ6+94wMpWw8s= root@ip-172-31-35-85.ec2.internal"
-}
+  key_name   = "demokey.pub"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCo4PcrzRPYSuHsX7AfWAtHk2wSS9NClUeLr/5EQXcL05DvOn+EXDGpQvVd1uPDwZrmVCHQR7zFuBssC0dEtoWFBFt6Ipdpwfw3njPe7++AkIUlVT8p8ePaEcF/uhJAkYOq5QgezCrlG7K3H/RD9zVcxv1TfE66D0Nu6Z8M+qDUvCU5RxrBwQ3FX0Vp101urBJgggV6v8kgYxm8Vu7zmEXtZIGspVqvQCtxrbqZ+I57H75K75Dr/MLNd+mFIvEEnd4Lzp18p8lJqsEfHmQQThXC3mIoPx6+DV3Dbl5biYCbKDkHzZaEcLOxZfT7UL+mTz46LOW4OiM1U6q90slnKjgB root@ip-172-31-35-85.ec2.internal"
+  }
