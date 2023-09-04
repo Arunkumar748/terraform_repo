@@ -6,7 +6,7 @@ resource "aws_instance" "ec2_example" {
 
     ami = "ami-051f7e7f6c2f40dc1"
     instance_type = "t2.micro" 
-    key_name= "key-for-terraform"
+    key_name= "terraformkey.pem"
     vpc_security_group_ids = [aws_security_group.main.id]
 
 }
