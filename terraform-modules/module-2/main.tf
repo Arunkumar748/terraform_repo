@@ -6,7 +6,7 @@ resource "aws_instance" "ec2_module_1" {
 
    ami           = var.ami_id
    instance_type =  var.web_instance_type
-   keyname       = "demokey.pub"                #This is optional one 
+   key_name       = "demokey.pub"                #This is optional one 
    vpc_security_group_ids = [aws_security_group.tf-modules-sg]
 
    tags = {
