@@ -1,6 +1,6 @@
-/* terraform {
+terraform {
   required_version = ">=1.0.6"
-} */
+}
 
 resource "aws_instance" "ec2_module_1" {
 
