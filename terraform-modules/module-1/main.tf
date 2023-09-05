@@ -7,7 +7,7 @@ resource "aws_instance" "ec2_module_1" {
    ami           = var.ami_id
    instance_type =  var.web_instance_type
    key_name       = "demokey.pub"                #This is optional one 
-   vpc_security_group_ids = [aws_security_group.tf-modules-sg.id]
+   vpc_security_group_ids = [aws_security_group.main-sg.id]
 
    tags = {
            Name = "terraform_lifecycle"
@@ -25,9 +25,9 @@ resource "aws_instance" "ec2_module_1" {
 }
 
 
-resource "aws_security_group" "tf-modules-sg" {
-  name        = "tf-modules-sg"
-  description = "tf-modules-sg"
+resource "aws_security_group" "main-sg" {
+  name        = "main-sg"
+  description = "main-sg"
   
 
   ingress {
