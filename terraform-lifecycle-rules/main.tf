@@ -1,4 +1,4 @@
-provider "aws" {
+/* provider "aws" {
     region = "us-east-1"
 }
 
@@ -51,6 +51,6 @@ lifecycle {
     tags
   ]
   }
-}
+} */
 
 #["44.219.49.12/32"]
