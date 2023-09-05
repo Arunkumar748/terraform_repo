@@ -4,10 +4,10 @@ provider "aws" {
 }
 
 module "mydemo-webserver-1" {
-  source = "./terraform-modules\main.tf"
+  source = ".\terraform-modules\main.tf"
 }
 
 module "mytest-webserver-2" {
-  source = "./terraform-modules\main.tf"
+  source = ".\terraform-modules\main.tf"
 }
 
