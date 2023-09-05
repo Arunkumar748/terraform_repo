@@ -7,7 +7,7 @@ resource "aws_instance" "ec2_module_1" {
    ami           = var.ami_id
    instance_type =  var.web_instance_type
    #key_name       = "demokey.pub"                #This is optional 
-   vpc_security_group_ids = [aws_security_group.main.id]
+   vpc_security_group_ids = [aws_security_group.module-2-sg.id]
 
    tags = {
            Name = "terraform_module"
@@ -25,9 +25,9 @@ resource "aws_instance" "ec2_module_1" {
 }
 
 
-resource "aws_security_group" "main" {
-  name        = "main"
-  description = "main"
+resource "aws_security_group" "module-2-sg" {
+  name        = "module-2-sg"
+  description = "module-2-sg"
   
 
   ingress {
