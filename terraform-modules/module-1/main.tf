@@ -53,6 +53,7 @@ resource "aws_security_group" "tf-modules-sg" {
     cidr_blocks      = ["0.0.0.0/0"]
     #ipv6_cidr_blocks = ["::/0"]
   }
+}
 
 resource "aws_key_pair" "deployer" {
   key_name   = "demokey.pub"
