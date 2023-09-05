@@ -8,6 +8,6 @@ module "mydemo-webserver-1" {
 }
 
 module "mytest-webserver-2" {
-  source = ".mytest-webserver-2"
+  source = "./mytest-webserver-2"
 }
 
