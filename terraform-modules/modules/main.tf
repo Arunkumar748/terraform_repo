@@ -1,11 +1,10 @@
-resource "aws_instance" "ec2-module-demo" {
+resource "aws_instance" "demo-module" {
 
    ami           = var.ami_id
-   instance_type =  var.web_instance_type
-   #vpc_security_group_ids = [aws_security_group.module-sg.id]
-
+   instance_type = var.instance_type
+   
    tags = {
-           Name = "ec2-module-demo"
+           Name = "demo-module"
    }
 }
 
