@@ -14,14 +14,14 @@ resource "aws_instance" "ec2_module_1" {
    }
 
   user_data = <<-EOF
-      #!/bin/sh
-      sudo yum-get update
-      sudo yum install -y apache2
-      sudo systemctl status apache2
-      sudo systemctl start apache2
-      sudo chown -R $USER:$USER /var/www/html
-      sudo echo "<html><body><h1>Hello this is module-1 at instance id `curl http://169.254.169.254/latest/meta-data/instance-id` </h1></body></html>" > /var/www/html/index.html
-      EOF
+#!/bin/sh
+sudo yum update -y
+sudo yum install -y httpd
+sudo systemctl enable httpd
+sudo systemctl start httpd
+sudo chown -R $USER:$USER /var/www/html
+echo "<html><body><h1>Hello this is module-2 at instance id \$(curl http://169.254.169.254/latest/meta-data/instance-id)</h1></body></html>" > /var/www/html/index.html
+EOF
 }
 
 
