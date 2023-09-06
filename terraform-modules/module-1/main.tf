@@ -10,13 +10,13 @@ resource "aws_instance" "ec2_module_1" {
    vpc_security_group_ids = [aws_security_group.module-1-sg.id]
 
    tags = {
-           Name = "terraform_module"
+           Name = "terraform_module-1"
    }
 
   user_data = <<-EOF
       #!/bin/sh
-      sudo apt-get update
-      sudo apt install -y apache2
+      sudo yum-get update
+      sudo yum install -y apache2
       sudo systemctl status apache2
       sudo systemctl start apache2
       sudo chown -R $USER:$USER /var/www/html
@@ -31,7 +31,7 @@ resource "aws_security_group" "module-1-sg" {
   
 
   ingress {
-    description      = "HTTP"
+    description      = "HTTP"  #HTTPS -443
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"

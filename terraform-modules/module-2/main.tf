@@ -10,7 +10,7 @@ resource "aws_instance" "ec2_module_1" {
    vpc_security_group_ids = [aws_security_group.module-2-sg.id]
 
    tags = {
-           Name = "terraform_module"
+           Name = "terraform_module-2"
    }
 
   user_data = <<-EOF
