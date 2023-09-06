@@ -3,9 +3,9 @@ provider "aws" {
     region = "us-east-1"
 }
 
-module "ec2-module-demo" {   
+module "demo-module" {   
   source       = ".//modules"
-  ami          = ami-051f7e7f6c2f40dc1
+  ami          = "ami-051f7e7f6c2f40dc1"
 }
 
 
