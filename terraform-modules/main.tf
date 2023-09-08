@@ -12,7 +12,7 @@ module "my_iam_user" {
   source     =  ".//modules-iam"                                 
   username   =  "user1"                                          
   policy_arn =  "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
-  instance_id = aws_instance.demo-module-ec2.id
+  instance_id = "aws_instance.demo-module-ec2.id"
 }
 
 
