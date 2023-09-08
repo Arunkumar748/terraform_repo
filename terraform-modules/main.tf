@@ -8,6 +8,13 @@ module "demo-module-ec2" {
   ami_id       = "ami-051f7e7f6c2f40dc1"
   instance_type = "t2.micro"
 }
+module "my_iam_user" {
+  source     =  ".//modules-iam"                                 
+  username   =  "user1"                                          
+  policy_arn =  "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+  instance_id = aws_instance.demo-module-ec2.id
+}
+
 
 
 
