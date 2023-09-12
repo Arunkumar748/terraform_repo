@@ -14,6 +14,11 @@ module "my_iam_user" {
   policy_arn =  "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
   instance_id = "aws_instance.demo-module-ec2.id"
 }
+module "s3_bucket" {
+  source = ".//module-s3"  
+  iam_user_name = "user1"  
+}
+
 
 
 
