@@ -19,8 +19,7 @@ resource "aws_iam_policy" "s3_read_policy" {
   })
 } */
 
-resource "aws_iam_policy_attachment" "attach_s3_policy" {
-  policy_arn = aws_iam_policy.s3_read_policy.arn
-  users      = [var.user1]  # Use the IAM user name provided as a variable
+resource "aws_iam_user" "user1" {
+  name = var.iam_user_name
 }
 }
