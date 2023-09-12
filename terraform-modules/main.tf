@@ -15,7 +15,7 @@ module "my_iam_user" {
   instance_id = "aws_instance.demo-module-ec2.id"
 }
 module "s3_bucket" {
-  source = ".//module-s3"  
+  source = ".//modules-s3"  
   iam_user_name = "user1"  
 }
 
