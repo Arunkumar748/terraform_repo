@@ -14,12 +14,12 @@ module "my_iam_user" {
   policy_arn =  "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
   instance_id = "aws_instance.demo-module-ec2.id"
 }
-module "s3_bucket" {
+module "my_s3_bucket" {
   source       = ".//modules-s3"
-  bucket_name  = "my-terraform-bucket-s3-user1"
-  iam_user_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
-  iam_user_name = "user1"  # Pass a value for iam_user_name
+  bucket_name  = "my-terraform-bucket"
+  iam_user_name = "user1"
 }
+
 
 
 
