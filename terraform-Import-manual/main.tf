@@ -7,7 +7,7 @@ resource "aws_instance" "import-ec2" {
     instance_type  =  "t2.micro"
     
     tags  =  {
-              Name  = "terraform-import-ec2"
+              Name  = "import-ec2"
     }
 
 }
