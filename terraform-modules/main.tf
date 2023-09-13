@@ -14,11 +14,6 @@ module "my_iam_user" {
   policy_arn =  "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
   instance_id = "aws_instance.demo-module-ec2.id"
 }
-module "my_s3_bucket" {
-  source       = ".//modules-s3"
-  bucket_name  = "my-terraform-bucket"
-  iam_user_name = "user1"
-}
 
 
 
