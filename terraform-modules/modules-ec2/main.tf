@@ -1,10 +1,10 @@
-resource "aws_instance" "demo-module-ec2" {
+/* resource "aws_instance" "demo-module-ec2" {
   ami           = var.ami_id
   instance_type = var.instance_type
     tags = {
   Name = "demo-module-ec2"
   }
-}
+} */
 
 
 

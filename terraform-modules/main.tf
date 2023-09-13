@@ -1,4 +1,4 @@
-#provider information
+/* #provider information
 provider "aws" {
     region = "us-east-1"
 }
@@ -13,7 +13,7 @@ module "my_iam_user" {
   username   =  "user1"                                          
   policy_arn =  "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
   instance_id = "aws_instance.demo-module-ec2.id"
-}
+} */
 
 
 

@@ -1,4 +1,4 @@
-variable "username" {
+/* variable "username" {
   description = "The name of the IAM user to create"
   type        = string
 }
@@ -9,4 +9,4 @@ variable "policy_arn" {
 variable "instance_id" {
   description = "The ID of the EC2 instance to work with"
   type        = string
-}
+} */
