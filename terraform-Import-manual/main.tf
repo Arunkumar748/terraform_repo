@@ -1,4 +1,4 @@
-/* provider "aws" {
+provider "aws" {
     region = "us-east-1"
 }   
 
@@ -10,7 +10,7 @@ resource "aws_instance" "import-ec2" {
               Name  = "import-ec2"
     }
 
-} */
+}
 
 resource "aws_s3_bucket" "my_bucket" {
   bucket = "terraform-importss3-bucket"  # This should match your S3 bucket name
