@@ -7,6 +7,7 @@
            Name = local.instance_name
    }
 }
+
 locals {
           instance_name  = "${terraform.workspace}-instance"
 }
