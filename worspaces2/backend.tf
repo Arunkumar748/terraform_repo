@@ -1,4 +1,4 @@
-terraform {
+/* terraform {
   backend "s3" {
     bucket         = "mystatefile-buket-environments"
     key            = "terraform.tfstate.d/my-environment/terraform.tfstate"
@@ -6,5 +6,5 @@ terraform {
     encrypt        = true
   }
 }
-
+ */
 
