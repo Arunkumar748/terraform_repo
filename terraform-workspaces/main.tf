@@ -1,6 +1,6 @@
-/* resource "aws_instance" "ec2_example" {
+resource "aws_instance" "ec2_example" {
 
-   ami           = "ami-051f7e7f6c2f40dc1"
+   ami           = "ami-04cb4ca688797756f"
    instance_type =  var.instance_type
    #count = 3
    tags = {
@@ -14,17 +14,26 @@ locals {
 }
 
 
-terraform {
+/* terraform {
     backend "s3" {
     bucket = "myworkspace-backup-statefile"
     key    = "workspaceBackup/terraform.tfstate"
     region =  "us-east-1"
 }
-} */ 
+} */
+
 
 #dev enivronment
 #production environment
 #test environment
+
+
+
+
+
+
+
+
 
 
 
