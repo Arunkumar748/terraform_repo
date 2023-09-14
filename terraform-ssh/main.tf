@@ -4,9 +4,9 @@ provider "aws" {
 
 resource "aws_instance" "ec2_example" {
 
-    ami = "ami-051f7e7f6c2f40dc1"
+    ami = "ami-04cb4ca688797756f"
     instance_type = "t2.micro" 
-    key_name= "demokey.pub"
+    key_name= "key-for-demo-1.pub"
     vpc_security_group_ids = [aws_security_group.main.id]
 
 }
@@ -35,6 +35,6 @@ resource "aws_security_group" "main" {
 }
 
 resource "aws_key_pair" "deployer" {
-  key_name   = "demokey.pub"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCo4PcrzRPYSuHsX7AfWAtHk2wSS9NClUeLr/5EQXcL05DvOn+EXDGpQvVd1uPDwZrmVCHQR7zFuBssC0dEtoWFBFt6Ipdpwfw3njPe7++AkIUlVT8p8ePaEcF/uhJAkYOq5QgezCrlG7K3H/RD9zVcxv1TfE66D0Nu6Z8M+qDUvCU5RxrBwQ3FX0Vp101urBJgggV6v8kgYxm8Vu7zmEXtZIGspVqvQCtxrbqZ+I57H75K75Dr/MLNd+mFIvEEnd4Lzp18p8lJqsEfHmQQThXC3mIoPx6+DV3Dbl5biYCbKDkHzZaEcLOxZfT7UL+mTz46LOW4OiM1U6q90slnKjgB root@ip-172-31-35-85.ec2.internal"
+  key_name   = "key-for-demo-1.pub"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDY9hGqUVkKouOodmjId5quHexyjNWR1DYmtqG/X612BMSW2YZP1Pbca0hX7eYKq9X5SzGzcCBouFAuTH9cRY/+ewWVx7BJUbuU/PJj9sJORj2DiFyCNy0nf1ALA4vWhVOlm8ciXCTBMrG0MepgOZ3UVfWDelhbpWm+ah39sybPS1v4JNL97LONH4jG0Nkx9fARcoBYezB6/JmXuwpYDnAlaJJ5NGZYAwUUxZ0sv4SSUFBfuqKrxCPKxFM5kKanDPrhMhi/Xl5kWbM8I06ZIEQ/71zdhtsu8aDNuqAzYJKcDZYc1eXzUK2FaRVLtPhiZtkf1tI4/OKh76fIs2yRxzXvSs4tmi87KoO+Wg04b3Lotg7NcfGTs2L9e/DauOnSyYiWrmCVjriFT8fkdIREy9UvJNF2R/T9vq90RF+U0Ou3Aizunyyi9wfn6R6QCiR9hUtofhszRFQI7h0IyxLMIoI6vsz4Rf0g59a/wpgtXxLUOr60imbQuYsw9Z3L2MoIMxM= root@ip-172-31-35-85.ec2.internal"
   }
