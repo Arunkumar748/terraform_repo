@@ -14,7 +14,7 @@ locals {
 }
 terraform {
     backend "s3" {
-    bucket = "myworkspace-backup-statefile"
+    bucket = "myworkspace-s3bucket-workspacesss"
     key    = "workspaceBackup/terraform.tfstate"
     region =  "us-east-1"
 }
