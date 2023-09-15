@@ -4,7 +4,7 @@ provider "aws" {
 resource "aws_instance" "terraform-file-provisioner" {
     ami   =  "ami-04cb4ca688797756f"
     instance_type  =  "t2.micro"
-    key_name  = "filekey.pem"
+    key_name  = "filekey"
     
     tags  =  {
               Name  = "terraform-file-provisioner   "
