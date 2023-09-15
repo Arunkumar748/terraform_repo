@@ -91,7 +91,7 @@ resource "aws_instance" "terraform-file-provisioner" {
     }
 
 provisioner "local-exec" {
-    command = "${self.private_ip}" >> private_ip.txt      #echo The server's IP address
+    command = "echo ${self.private_ip} > private_ip.txt"      #echo The server's IP address
   }
 }
 
