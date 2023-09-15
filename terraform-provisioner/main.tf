@@ -11,7 +11,7 @@ resource "aws_instance" "terraform-file-provisioner" {
     }
 
 provisioner "file" {
-    source      = "file2_copy"
+    source      = "file2_copy" "file1-copy"
     destination = "/tmp/file2_copy"
 }
 connection {
