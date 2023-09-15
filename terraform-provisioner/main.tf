@@ -17,7 +17,7 @@ provisioner "file" {
 connection {
     type        = "ssh"
     user        = "ec2-user" # The username for your EC2 instance (it may vary)
-    private_key = file("filekey") # Provide the path to your private key
+    private_key = file("filekey.pem") # Provide the path to your private key
     host        = aws_instance.terraform-file-provisioner.public_ip
   }
 }
