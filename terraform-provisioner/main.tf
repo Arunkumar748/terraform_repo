@@ -101,25 +101,40 @@ provisioner "local-exec" {
 provider "aws" {
     region = "us-east-1"
 }
-resource "aws_instance" "terraform-file-provisioner" {
-    ami   =  "ami-04cb4ca688797756f"
-    instance_type  =  "t2.micro"
-    key_name  = "abcd_key"
+resource "aws_instance" "terraform-remote-provisioner" {
+    ami                    =  "ami-04cb4ca688797756f"
+    instance_type          =  "t2.micro"
+    key_name               = "remotekey.pem"
     vpc_security_group_ids = [aws_security_group.main.id]
     tags  =  {
-              Name  = "terraform-file-provisioner   "
+              Name  = "terraform-remote-provisioner"
     }
 
 provisioner "file" {
-    source      = "testfile" 
-    destination = "/tmp/testfile" 
-}
+    source      = "index.html" 
+    destination = "/tmp/index.html" 
 connection {
     type        = "ssh"
-    user        = "ec2-user"                                            #The username for your EC2 instance (it may vary)
-    private_key = file("abcd_key")                                      #Provide the path to your private key
-    host        = aws_instance.terraform-file-provisioner.public_ip
+    user        = "ec2-user"                                                 #The username for your EC2 instance (it may vary)
+    private_key = file("remotekey.pem")                                      #Provide the path to your private key
+    host        = aws_instance.terraform-remote-provisioner.public_ip
   }
+}
+
+provisioner "remote-exec" {
+    inline = [
+    "sudo amazon-linux-extras install nginx1",
+    "sudo yum -y install nginx",
+    "sudo systemctl start nginx", 
+    "sudo cp /tmp/index.html /usr/share/nginx/html/index.html"
+    ]
+connection {
+    type        = "ssh"
+    user        = "ec2-user"                                                 #The username for your EC2 instance (it may vary)
+    private_key = file("remotekey.pem")                                      #Provide the path to your private key
+    host        = aws_instance.terraform-remote-provisioner.public_ip
+  }
+}
 }
 resource "aws_security_group" "main" {
   ingress                = [
@@ -149,3 +164,4 @@ resource "aws_security_group" "main" {
     }
   ]
 }
+
