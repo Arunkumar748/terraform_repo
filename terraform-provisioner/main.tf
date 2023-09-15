@@ -104,7 +104,7 @@ provider "aws" {
 resource "aws_instance" "terraform-remote-provisioner" {
     ami                    =  "ami-04cb4ca688797756f"
     instance_type          =  "t2.micro"
-    key_name               = "remotekey.pem"
+    key_name               = "remotekey"
     vpc_security_group_ids = [aws_security_group.main.id]
     tags  =  {
               Name  = "terraform-remote-provisioner"
