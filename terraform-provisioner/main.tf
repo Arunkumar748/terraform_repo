@@ -87,11 +87,11 @@ resource "aws_instance" "terraform-file-provisioner" {
     ami   =  "ami-04cb4ca688797756f"
     instance_type  =  "t2.micro"
     tags  =  {
-              Name  = "terraform-file-provisioner   "
+              Name  = "terraform-local-provisioner   "
     }
 
 provisioner "local-exec" {
-    command = "echo The server's IP address is ${self.private_ip}"
+    command = "${self.private_ip}" >> private_ip       #echo The server's IP address
   }
 }
 
