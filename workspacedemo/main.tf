@@ -1,4 +1,4 @@
-provider "aws" {
+/* provider "aws" {
     region = "us-east-1"
 }  
 resource "aws_instance" "ec2_example" {
@@ -12,4 +12,11 @@ resource "aws_instance" "ec2_example" {
 }
 locals {
           instance_name  = "${terraform.workspace}-instance"
-} 
+} */ 
+ terraform {
+    backend "s3" {
+    bucket = "myworkspace-backup-statefile"
+    key    = "workspaceBackup/terraform.tfstate"
+    region =  "us-east-1"
+}
+}
