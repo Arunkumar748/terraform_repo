@@ -98,7 +98,7 @@ provisioner "local-exec" {
 ##################################################
 # REMOTE.EXEC-PROVISIONER
 ##################################################
-provider "aws" {
+/* provider "aws" {
     region = "us-east-1"
 }
 resource "aws_instance" "terraform-remote-provisioner" {
@@ -163,5 +163,5 @@ resource "aws_security_group" "main" {
     to_port          = 0
     }
   ]
-}
+} */
 
