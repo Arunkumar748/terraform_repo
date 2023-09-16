@@ -10,3 +10,9 @@ resource "aws_instance" "import-ec2" {
     }
 
 }
+resource "aws_s3_bucket" "s3-importbucket" {
+  bucket = "s3-importbucket"  
+  versioning {
+    enabled = true
+  }
+}
